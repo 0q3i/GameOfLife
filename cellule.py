@@ -7,9 +7,17 @@ class Cellule:
         self.g = g
 
     def calcule_etat_futur():
-        """Détermine l’état à venir de la cellule (attribut vivra)"""
+        """Calcule l’état à venir de la cellule (attribut vivra), avec voisin et voisin_vivante"""
         pass
 
-    def update():
+    def update(self):
         """Met à jour la cellule en affectant l’état à venir vivra à l’attribut actuel vivante"""
+        self.vivante = self.vivra
+
+    def voisin_vivante():
+        """Revoies le nombre de casse noire renvois un int, compte le nombre de voisin vivant a une case donnee"""
+        pass
+
+    def rempilr(self):
+        """revois un bool, s'il y a exactement 3 voisine vivant la case devain vivante"""
         pass
