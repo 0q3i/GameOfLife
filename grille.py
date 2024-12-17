@@ -10,17 +10,21 @@ class Grille:
         self.hauteur = h #hauteur d'une case
         self.lst_c = lst_cellule #list des cellul vivante
 
-    def grille(self):
-        "renvois rien, desine une geille cet methode elle va pt pas excite dans le futur"
-        pass
-
     def tour(self):
         """ne renvois rien, modifie g dans la class cellule pour pouvoir modifier la cellule"""
         pass
+    
+    def nombre_de_droit(self,SCREEN_HIGHT):
+        """Renvois int, calcul le nombre ce droit nessaire pour faire une grille"""
+        return self.h// SCREEN_HIGHT
 
+    
+    def nombre_de_droit(self,SCREEN_WIGHT):
+        """Renvois int, calcul le nombre ce droit nessaire pour faire une grille"""
+        return self.l // SCREEN_WIGHT
 
     def voisin(self,cellule):
-        """renvois un int, compte le nombre de voisin a une case donnee"""
+        """renvois une list, compte le nombre de voisin a une case donnee"""
         #la complexite est linaire car 3*3*n = 9n donc 9n operation
         lst_voisin = []
         for elm in self.lst_c:
@@ -28,6 +32,7 @@ class Grille:
                 for x in range(3):
                     if cellule.x + x == elm.x and cellule.y +y == elm.y:
                         lst_voisin.append(elm)
+        return lst_voisin
 
     def _ajoute(self, cellule):
         """renvois rien, elle ajoute les cellules vivante a lst_c"""
