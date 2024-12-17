@@ -47,4 +47,5 @@ def _nouv_lst(lst):
             nouv_lst.append(elm)
     return nouv_lst
 
+def nombre_nb_droit(parametre, )
 #jeu de test
