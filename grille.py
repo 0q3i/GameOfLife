@@ -18,13 +18,6 @@ class Grille:
         """ne renvois rien, modifi g dans la class cellul pour pouvoir modifier la cellul"""
         pass
 
-    def rempilr(self):
-        """revois un bool, s'il y a exactement 3 voisine vivant la case devain vivante"""
-        pass
-
-    def voisin_vivante(self,cellul):
-        """renvois un int, compte le nombre de voisin vivant a une case donnee"""
-        pass
 
     def voisin(self,cellul):
         """renvois un int, compte le nombre de voisin a une case donnee"""
