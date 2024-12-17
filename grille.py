@@ -11,7 +11,7 @@ class Grille:
         self.lst_c = lst_cellule #list des cellul vivante
 
     def grille(self):
-        "renvois rien, desine une geille cet methode elle va pt pas excite dans le futur"
+        "renvois rien, desine une grille cet methode elle va pt pas excite dans le futur"
         pass
 
     def tour(self):

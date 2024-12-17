@@ -6,8 +6,14 @@ class Cellule:
         self.y = y
         self.g = g
 
-    def calcule_etat_futur():
+    def calcule_etat_futur(self):
         """Calcule l’état à venir de la cellule (attribut vivra), avec voisin et voisin_vivante"""
+        #recuperer les voisins
+            #Avec voisin fournie par Grille
+        # Calculer combien sont vivante
+            #Avec la methode voision_vivante
+        #On aplique les regles pour savoir si oui ou non elle va etre vivante et on affect les resultt a vivra. 
+
         pass
 
     def update(self):
@@ -15,9 +21,5 @@ class Cellule:
         self.vivante = self.vivra
 
     def voisin_vivante():
-        """Revoies le nombre de casse noire renvois un int, compte le nombre de voisin vivant a une case donnee"""
-        pass
-
-    def rempilr(self):
-        """revois un bool, s'il y a exactement 3 voisine vivant la case devain vivante"""
+        """Renvoies le nombre de casse noire (int)"""
         pass
