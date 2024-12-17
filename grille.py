@@ -21,6 +21,7 @@ class Grille:
 
     def voisin(self,cellule):
         """renvois un int, compte le nombre de voisin a une case donnee"""
+        #la complexite est linaire car 3*3*n = 9n donc 9n operation
         lst_voisin = []
         for elm in self.lst_c:
             for y in range(3):
@@ -35,7 +36,7 @@ class Grille:
 
     def _remove(self):
         """renvois rien, elle enleve les cellules mortes de lst_c"""
-        #complexite linaire
+        #complexite linaire car n operation
         for i in range(len(self.lst_c)):
             if not self.lst_c[i].vivante:
                 self.lst_c[i] = None
@@ -44,7 +45,7 @@ class Grille:
 def _nouv_lst(lst):
     """renvois une nouvelle list avec que des cellules vivantes.
       On suppose que lst est composer uniquement de cellules"""
-    #complexite linaire
+    #complexite linaire n operation
     nouv_lst = [] 
     for elm in lst:
         if elm is not None: 
