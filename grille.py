@@ -6,7 +6,7 @@ import pyxel as px
 class Grille:
 
     def __init__(self,l,h,lst_cellule):
-        self.longuer = l #loguer d'une case
+        self.longuer = l #longuer d'une case
         self.hauteur = h #hauteur d'une case
         self.lst_c = lst_cellule #list des cellul vivante
 
@@ -22,9 +22,11 @@ class Grille:
     def voisin(self,cellule):
         """renvois un int, compte le nombre de voisin a une case donnee"""
         lst_voisin = []
-        for y in range(3):
-            for x in range(3):
-                pass
+        for elm in self.lst_c:
+            for y in range(3):
+                for x in range(3):
+                    if cellule.x + x == elm.x and cellule.y +y == elm.y:
+                        lst_voisin.append(elm)
 
     def _ajoute(self, cellule):
         """renvois rien, elle ajoute les cellules vivante a lst_c"""
