@@ -11,32 +11,24 @@ class Grille:
         self.lst_c = lst_cellule #list des cellul vivante
 
     def grille(self):
-        "desine une geille cet methode elle va pt pas excite dans le futur"
+        "renvois rien, desine une geille cet methode elle va pt pas excite dans le futur"
         pass
 
     def tour(self):
         """ne renvois rien, modifi g dans la class cellul pour pouvoir modifier la cellul"""
         pass
 
-    def rempilr(self):
-        """revois un bool, s'il y a exactement 3 voisine vivant la case devain vivante"""
-        pass
-
-    def voisin_vivante(self,cellul):
-        """renvois un int, compte le nombre de voisin vivant a une case donnee"""
-        pass
-
-    def voisin(self,cellul):
+    def voisin(self,cellule):
         """renvois un int, compte le nombre de voisin a une case donnee"""
         voisin_tottale = -1
         for y in range(3):
             for x in range(3):
                 pass
 
-    def _ajoute(self, cellul):
+    def _ajoute(self, cellule):
         """renvois rein, elle ajoute les cellul vivante a lst_c"""
         #complexite constante
-        self.lst_c.append(cellul)
+        self.lst_c.append(cellule)
 
     def _remove(self):
         """renvois rien, elle enleve les celluls mort de lst_c"""
@@ -51,7 +43,7 @@ def _nouv_lst(lst):
     #complexite linaire
     nouv_lst = [] 
     for elm in lst:
-        if elm is not None: 
+        if elm is not None:
             nouv_lst.append(elm)
     return nouv_lst
 

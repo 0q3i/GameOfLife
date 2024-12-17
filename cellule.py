@@ -7,13 +7,9 @@ class Cellule:
         self.g = g
 
     def calcule_etat_futur():
-        """Calcule l’état à venir de la cellule (attribut vivra), avec voisin et voisin_vivante"""
+        """Détermine l’état à venir de la cellule (attribut vivra)"""
         pass
 
-    def update(self):
+    def update():
         """Met à jour la cellule en affectant l’état à venir vivra à l’attribut actuel vivante"""
-        self.vivante = self.vivra
-
-    def voisin_vivante():
-        """Revoies le nombre de casse noire"""
         pass
