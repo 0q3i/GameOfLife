@@ -12,19 +12,22 @@ class Grille:
 
     def tour(self):
         """ne renvois rien, modifie g dans la class cellule pour pouvoir modifier la cellule"""
+        #probleme je sais pas faire 
         pass
     
-    def nombre_de_droit(self,SCREEN_HIGHT):
+    def nombre_de_droitW(self,SCREEN_HIGHT):
         """Renvois int, calcul le nombre ce droit nessaire pour faire une grille"""
-        return self.h// SCREEN_HIGHT
+        #complexite constante
+        return self.hauteur// SCREEN_HIGHT
 
     
-    def nombre_de_droit(self,SCREEN_WIGHT):
+    def nombre_de_droitH(self,SCREEN_WIGHT):
         """Renvois int, calcul le nombre ce droit nessaire pour faire une grille"""
-        return self.l // SCREEN_WIGHT
+        #complexite constante
+        return self.longuer// SCREEN_WIGHT
 
     def voisin(self,cellule):
-        """renvois une list, compte le nombre de voisin a une case donnee"""
+        """renvois une list de cellule, list de voisin de corrdonne x,y"""
         #la complexite est linaire car 3*3*n = 9n donc 9n operation
         lst_voisin = []
         for elm in self.lst_c:
@@ -58,3 +61,8 @@ def _nouv_lst(lst):
     return nouv_lst
 
 #jeu de test
+
+
+
+
+
