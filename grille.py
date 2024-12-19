@@ -1,19 +1,29 @@
 from math import *
-from cellule import *
-import pyxel as px
+import cellule as c
+
+"""
+
+rect(x, y, w, h, col)
+Draw a rectangle of width w, height h and color col from (x, y).
+
+"""
 
 
 class Grille:
 
-    def __init__(self,l,h,lst_cellule):
+    def __init__(self,x,y,l,h):
         self.longuer = l #longuer d'une case
         self.hauteur = h #hauteur d'une case
-        self.lst_c = lst_cellule #list des cellul vivante
+        self.matrice = [[c.Cellule(False,False,x_c,"pas fini",None) for x_c in range(x)] for x_y in range(y)]
+        """une list de list de x en nombre de colone et y en nombre de rang"""
 
     def tour(self):
         """ne renvois rien, modifie g dans la class cellule pour pouvoir modifier la cellule"""
         #probleme je sais pas faire 
-        pass
+        for c in self.lst_c:
+            if c.calcule_etat_futur:
+                pass
+
     
     def nombre_de_droitW(self,SCREEN_HIGHT):
         """Renvois int, calcul le nombre ce droit nessaire pour faire une grille"""
@@ -31,8 +41,8 @@ class Grille:
         #la complexite est linaire car 3*3*n = 9n donc 9n operation
         lst_voisin = []
         for elm in self.lst_c:
-            for y in range(3):
-                for x in range(3):
+            for y in range(-1,2):
+                for x in range(-1,2):
                     if cellule.x + x == elm.x and cellule.y +y == elm.y:
                         lst_voisin.append(elm)
         return lst_voisin
@@ -60,8 +70,18 @@ def _nouv_lst(lst):
             nouv_lst.append(elm)
     return nouv_lst
 
-#jeu de test
+def lst_a_lst2(lst,lst2):
+    """renvois rien,ajoute tout les elements d'une list dans une list de list"""
+    for elm in lst:
+        lst2[elm.y][elm.x] = elm
 
+
+
+#jeu de test
+g= Grille(10,10,[c.Cellule(True,None,10,10,None),c.Cellule(True,None,10,11,None),c.Cellule(True,None,20,20,None)])
+lst_c_v=g.voisin(c.Cellule(True,None,11,10,None))
+for elm in lst_c_v:
+    print(elm)
 
 
 
