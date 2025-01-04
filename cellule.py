@@ -1,4 +1,3 @@
-from grille import voisin
 
 class Cellule:
     def __init__(self, vivante, vivra, x, y, g):
