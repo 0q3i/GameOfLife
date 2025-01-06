@@ -1,3 +1,5 @@
+#A faire lundi 7
+
 import pyxel as px
 import grille as g
 import cellule as c

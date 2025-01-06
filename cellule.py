@@ -8,14 +8,12 @@ class Cellule:
         self.g = g
 
 
-    def calcule_etat_futur(self):
+    def calcule_etat_futur(self, voisin):
         """Calcule état à venir de la cellule (attribut vivra), avec voisin et voisin_vivante"""
-       # Recuper le tableau des voisins de la cellule self, lst_voisin
-        lst_voisin = self.g.voisin(self)  # Appel à la méthode voisin de la classe Grille
-
+        
         # Calcule le nb de cellule vivante. 
-        nb_vivante = self.voisin_vivante(lst_voisin)  # Appel à la méthode voisin_vivante pour compter les cellules vivantes
-
+        nb_vivante = self.voisin_vivante(voisin)  # Appel à la méthode voisin_vivante pour compter les cellules vivantes
+        
         # La méthode future, vérifie d'abord si self est vivante ou pas, avec nb_vivante.
         # Puis renvoie un bool indiquant si la cellule vivra ou pas au prochain tour.
         if self.future(nb_vivante):
@@ -27,15 +25,13 @@ class Cellule:
     def future(self, nb_vivante: int) -> bool :
         """Verifie en premier si self est vivante ou non.
         Verifie les regles du jeux, renvoie True ou False en fonction."""
-         # Verifie d'abord si self.vivante == True:
+         # Verifie d'abord si self est vivante
         if self.vivante:
-            if nb_vivante < 2:  # Moins de 2 voisins vivants
-                return False
-            elif nb_vivante == 2 or nb_vivante == 3:  # 2 ou 3 voisins vivants
+            if 2 <= nb_vivante <= 3:  # 2 ou 3 voisins vivants
                 return True
-            else:  # Plus de 3 voisins vivants
+            else: 
                 return False
-        else:  # Si self.vivante == False
+        else: 
             if nb_vivante == 3:  # Exactement 3 voisins vivants
                 return True
             else:
@@ -52,16 +48,14 @@ class Cellule:
        # Utilise la méthode voisin, classe Grille.
         nb_vivante = 0  # Initialisation du compteur de cellules vivantes
         for v in voisin:  # Parcours du tableau des voisins
-            if v.vivante:  # Si la cellule voisine est vivante
+            if v.vivante and v != voisin[(len(voisin)-1)//2]:  # Si la cellule voisine est vivante
                 nb_vivante += 1  # Incrémente le compteur
         return nb_vivante  # Renvoie le nombre de cellules vivantes
     
 
     def __str__(self):
         if self.vivante:
-            return "+" # Si la cellule est vivante, retourne "+"
+            return "1" # Si la cellule est vivante, retourne "+"
         else:
-            return "-" # Si la cellule est morte, retourne "-"
-        
-        
+            return "0" # Si la cellule est morte, retourne "-"
 
