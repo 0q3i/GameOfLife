@@ -11,6 +11,49 @@ GRILLE_CASE_LARGEUR = CELLULE_LARGEUR
 GRILLE_CASE_HAUTEUR = CELLULE_HAUTEUR
 GRILLE =g.Grille(GRILLE_CASE_LARGEUR,GRILLE_CASE_HAUTEUR,[])
 
+#class config
+class Config:
+
+    def __init__(self,choix):
+        self.choix = choix
+
+    def choix_config(self,gr):
+        if self.choix == "galder":
+            self.glader(gr)
+        elif self.choix == "cliniotant":
+            self.cliniotant(gr)
+        elif self.choix == "carre":
+            self.carre(gr)
+
+    def glader(self,gr):
+        A = c.Cellule(True, None, 1, 1)
+        B = c.Cellule(True, None, 2, 2)
+        C = c.Cellule(True, None, 2, 3)
+        D = c.Cellule(True, None, 1, 3)
+        E = c.Cellule(True, None, 0, 3)
+        gr.mat_ajoute(A)
+        gr.mat_ajoute(B)
+        gr.mat_ajoute(C)
+        gr.mat_ajoute(D)
+        gr.mat_ajoute(E)
+    def cliniotant(self,gr):
+        A = c.Cellule(True, None, 1, 1)
+        B = c.Cellule(True, None, 1, 2)
+        C = c.Cellule(True, None, 1, 3)
+        gr.mat_ajoute(A)
+        gr.mat_ajoute(B)
+        gr.mat_ajoute(C)
+    def carre(self,gr):
+        A = c.Cellule(True, None, 1, 1)
+        B = c.Cellule(True, None, 2, 1)
+        C = c.Cellule(True, None, 1, 2)
+        D = c.Cellule(True, None, 2, 2)
+        gr.mat_ajoute(A)
+        gr.mat_ajoute(B)
+        gr.mat_ajoute(C)
+        gr.mat_ajoute(D)
+
+
 #class app pour tourner jeu
 class App:
 
