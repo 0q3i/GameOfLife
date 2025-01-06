@@ -54,6 +54,7 @@ class Cellule:
 
     def __str__(self):
         if self.vivante:
-            return "1" # Si la cellule est vivante, retourne "+"
+            return "#" # Si la cellule est vivante, retourne "+"
         else:
-            return "0" # Si la cellule est morte, retourne "-"
+            return "-" # Si la cellule est morte, retourne "-"
+        
