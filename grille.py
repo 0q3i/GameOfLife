@@ -71,5 +71,3 @@ class Grille:
             for elm in lst:
                 print(elm, end = "|")
             print()
-
-

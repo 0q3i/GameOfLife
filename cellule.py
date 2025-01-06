@@ -58,4 +58,3 @@ class Cellule:
             return "1" # Si la cellule est vivante, retourne "+"
         else:
             return "0" # Si la cellule est morte, retourne "-"
-
