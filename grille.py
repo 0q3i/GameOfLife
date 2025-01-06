@@ -19,7 +19,7 @@ class Grille:
         # Création de la matrice représentant la grille. Chaque cellule est une instance de Cellule
         # La grille est de taille x par y et chaque cellule est initialisée avec des valeurs par défaut
         # La Coordonnee 0 0 ce trouve toujour en haut a gauche
-        self.matrice = [[c.Cellule(False, False, x_c, x_y, self) for x_c in range(x+1)] for x_y in range(y+1)]
+        self.matrice = [[c.Cellule(False, False, x_c, x_y) for x_c in range(x+1)] for x_y in range(y+1)]
         self.x = x
         self.y = y
         
@@ -38,9 +38,7 @@ class Grille:
             for c_colonne in ligne:
                 c_colonne.update()
 
-    
-            
-        
+
     def voisin(self, cellule):
         """
         Renvoie la liste des voisins d'une cellule.
@@ -51,6 +49,8 @@ class Grille:
         lst_voisin = []
         for y in range(-1,2):
             for x in range(-1,2):
+                if x == 0 and y == 0:
+                    continue
                 v_x=cellule.x+x
                 v_y=cellule.y+y
                 if 0<=v_y<=self.y and 0<=v_x<=self.x:

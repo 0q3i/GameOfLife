@@ -1,11 +1,10 @@
 
 class Cellule:
-    def __init__(self, vivante, vivra, x, y, g):
+    def __init__(self, vivante, vivra, x, y):
         self.vivante = vivante
         self.vivra = vivra
         self.x = x
         self.y = y
-        self.g = g
 
 
     def calcule_etat_futur(self, voisin):
@@ -48,7 +47,7 @@ class Cellule:
        # Utilise la méthode voisin, classe Grille.
         nb_vivante = 0  # Initialisation du compteur de cellules vivantes
         for v in voisin:  # Parcours du tableau des voisins
-            if v.vivante and v != voisin[(len(voisin)-1)//2]:  # Si la cellule voisine est vivante
+            if v.vivante:  # Si la cellule voisine est vivante
                 nb_vivante += 1  # Incrémente le compteur
         return nb_vivante  # Renvoie le nombre de cellules vivantes
     
