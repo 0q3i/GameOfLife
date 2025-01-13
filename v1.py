@@ -4,11 +4,9 @@ from time import sleep
 
 # fichier test
 
-<<<<<<< HEAD
-reg = g.Grille(40, 40)  # Création d'une grille de 10x10 avec des cellules de taille 1x1
-=======
+
 reg = g.Grille(50, 40)  # Création d'une grille de 10x10 avec des cellules de taille 1x1
->>>>>>> db3cb9fd1b89cd8180ab660297aa05f400e2b518
+
 
 # Création des cellules et ajout à la grille
 config = input("donne une lettre de l'aphbet romain en majuscule:")
@@ -63,4 +61,4 @@ while True:
     #print dans la console la grille
     reg.mat()
     #fps
-    sleep(2)
+    sleep(0.5)
