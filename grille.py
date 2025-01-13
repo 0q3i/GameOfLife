@@ -4,7 +4,7 @@ import cellule as c
 # Définition de la classe Grille qui représente la grille du jeu
 class Grille:
 
-    def __init__(self, x, y, l, h):
+    def __init__(self, x, y):
         """
         Inisilaisation 
         Paramètres :

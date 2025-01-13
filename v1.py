@@ -4,7 +4,7 @@ from time import sleep
 
 # fichier test
 
-reg = g.Grille(40, 40, 1, 1)  # Création d'une grille de 10x10 avec des cellules de taille 1x1
+reg = g.Grille(40, 40)  # Création d'une grille de 10x10 avec des cellules de taille 1x1
 
 # Création des cellules et ajout à la grille
 config = input("donne une lettre de l'aphbet romain en majuscule:")
@@ -42,13 +42,13 @@ elif config == "D":
 
 
 
-reg.mat()
+reg.mat() #methode STR
 print("debut")
 while True:
-    #calcule
+    #modifie la grill enfonction de la cellule
     reg.tour()
     print("fin")
-    #console
+    #print dans la console la grille
     reg.mat()
     #fps
     sleep(0.1)
