@@ -4,7 +4,11 @@ from time import sleep
 
 # fichier test
 
+<<<<<<< HEAD
 reg = g.Grille(40, 40)  # Création d'une grille de 10x10 avec des cellules de taille 1x1
+=======
+reg = g.Grille(50, 40)  # Création d'une grille de 10x10 avec des cellules de taille 1x1
+>>>>>>> db3cb9fd1b89cd8180ab660297aa05f400e2b518
 
 # Création des cellules et ajout à la grille
 config = input("donne une lettre de l'aphbet romain en majuscule:")
@@ -37,8 +41,16 @@ elif config == "C":
     reg.mat_ajoute(C)
     reg.mat_ajoute(D)
 elif config == "D":
-    
-    pass
+    lst_pos= [(1,15),(2,15),(1,16),(2,16),(11,15),(11,16),(11,14),(12,13),
+              (13,12),(14,12),(12,17),(13,18),(14,18),(15,15),(16,13),(17,14),
+              (17,15),(18,15),(17,16),(16,17),(21,16),(22,16),(21,17),(22,17),
+              (21,18),(22,18),(23,15),(25,15),(25,14),(23,19),(25,19),(25,20),
+              (39,18),(40,18),(39,17),(40,17)
+              ]
+    for elm in lst_pos:
+        A = c.Cellule(True,None,elm[0],elm[1])
+        reg.mat_ajoute(A)
+
 
 
 
@@ -51,4 +63,4 @@ while True:
     #print dans la console la grille
     reg.mat()
     #fps
-    sleep(0.1)
+    sleep(2)
