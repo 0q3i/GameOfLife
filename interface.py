@@ -3,13 +3,15 @@ import grille as g
 import cellule as c
 
 #les parametres
-SCREEN_WIDTH = 100
-SCREEN_HEIGHT = 100
+SCREEN_WIDTH = 160
+SCREEN_HEIGHT = 160
 TAILLE_CELL = 8
-GRILLE_CASE_LARGEUR = 10
-GRILLE_CASE_HAUTEUR = 10
+GRILLE_CASE_LARGEUR = SCREEN_WIDTH // TAILLE_CELL
+GRILLE_CASE_HAUTEUR = SCREEN_HEIGHT // TAILLE_CELL
 GRILLE =g.Grille(GRILLE_CASE_LARGEUR,GRILLE_CASE_HAUTEUR)
-GRILLE.matrice[0][0].vivante = True
+
+# GRILLE.matrice[0][0].vivante = True
+
 #class config
 class Config:
 
@@ -68,13 +70,14 @@ class Config:
 class App:
 
     def __init__(self,SCREEN_WIDTH,SCREEN_HEIGHT):
-        px.init(SCREEN_WIDTH, SCREEN_HEIGHT)
+        px.init(SCREEN_WIDTH, SCREEN_HEIGHT, title="Jeu de la Vie")
         px.run(self.update, self.draw)
         self.x = SCREEN_WIDTH
 
     def update(self):
-        pass
-
+        for lst in GRILLE.matrice:
+            for cell in lst:
+                cell.update() 
 
 
     def draw(self):
@@ -87,5 +90,5 @@ class App:
                     c= 7
                 
                 px.rect(cell.x * TAILLE_CELL, cell.y * TAILLE_CELL, TAILLE_CELL, TAILLE_CELL, c)
-App(SCREEN_HEIGHT,SCREEN_WIDTH)
+App(SCREEN_WIDTH, SCREEN_HEIGHT)
 
