@@ -10,11 +10,7 @@ class Grille:
         Paramètres :
         x : nombre de colonnes de la grille
         y : nombre de lignes de la grille
-        l : longueur de chaque cellule
-        h : hauteur de chaque cellule
         """
-        self.longuer = l  # Stocke la longueur des cellules
-        self.hauteur = h  # Stocke la hauteur des cellules
 
         # Création de la matrice représentant la grille. Chaque cellule est une instance de Cellule
         # La grille est de taille x par y et chaque cellule est initialisée avec des valeurs par défaut
