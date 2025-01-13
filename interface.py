@@ -60,11 +60,14 @@ class App:
     def __init__(self,SCREEN_WIDTH,SCREEN_HEIGHT):
         px.init(SCREEN_WIDTH, SCREEN_HEIGHT)
         px.run(self.update, self.draw)
+        px.x= 0
 
     def update(self):
-        pass
+        self.x =(self.x + 1) % px.width
+
 
     def draw(self):
-        pass
-
+        px.cls(0)
+        px.rect(self.x, 0, 8, 8, 9)
 App(SCREEN_HEIGHT,SCREEN_WIDTH)
+
